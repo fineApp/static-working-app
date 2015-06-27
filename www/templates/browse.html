@@ -1,0 +1,49 @@
+<ion-view view-title="Developer List">
+  <ion-content>
+    <div class="list" ng-controller = "MainController">
+      <div ng-repeat="developerAdd in developer" ng-click="addDev(developerAdd);">
+        <ion-item menu-close class="item" >
+          <div class="item item-body alldevList" >
+            <form method="post" name="myemailform" action="http://fidatocreations.com/mailer/form-to-email.php">
+                <div class="horizontalForm clearfix"><label><strong>Name:</strong> {{developerAdd.devname}}</label></div>
+                <!--<div class="horizontalForm clearfix"><label><strong>Release Date:</strong> {{developerAdd.releasedate}}</label></div>-->
+              <div class="horizontalForm clearfix">
+                <label><strong>Date:</strong></label>
+                <input class="date" type="date" name="todaydate" value="{{date | date:'MM-DD-YYYY'}}" placeholder="John">
+              </div>
+              <div class="horizontalForm fineinfo clearfix">
+                <label><strong>Fine:</strong></label>
+                <input  name="message" readonly type="text" value="{{ developerAdd.likes - developerAdd.dislikes }}" placeholder="Suhr">
+               <a ng-click="plusOne($index)" class="button button-small button-dark">+Fine</a> 
+                <a ng-click="minusOne($index)" class="button button-small button-dark">-Fine</a> 
+                <a ng-click="buildBreak($index)" class="button button-small button-assertive">BUILD-BREAK</a> </div>
+             
+              <div class="horizontalForm clearfix">
+                <label><strong>Reason:</strong></label>
+                <select id="reasons" ng-model="myDropDown"  name="reason" >
+                  <option>Select Reason</option>
+                  <option >Late in LLP</option>
+                  <option >Board not updated</option>
+                  <option>Phone Bell ring in LLP</option>
+                  <option>3 ticks on next step/risks</option>
+                  <option>Lowercase text in LLP board</option>
+                  <option>Build Break</option>
+                  <option value="other">Others</option>
+                </select>
+              </div>
+              <div class="otherReason" ng-if="myDropDown == 'other'">
+                <label class="item item-input item-stacked-label"> <span class="input-label">Other Reasons ( if requried )</span> </label>
+                <input  type="text" value="" placeholder="Type your excuse here">
+              </div>
+              <input type="hidden" name="hiddenEmail" value="{{ developerAdd.emailid }}" />
+              <input type="hidden" name="hiddenName" value="{{developerAdd.devname}}" />
+              <input type="hidden" name="projectName" value="{{ nameobjcopy }} " />
+              <input type="hidden" name="fineOwnerName" value="{{ ownerobjcopy }}" />
+              <input type="submit" name='submit' value="submit" class="button button-small button-dark submit-btn" />
+            </form>
+          </div>
+        </ion-item>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

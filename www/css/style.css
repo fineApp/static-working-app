@@ -1,0 +1,108 @@
+/* Empty. Add your own CSS if you like */
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+	background: #F15D22
+}
+.bar.bar-stable .title {
+	color: #fff;
+	text-align: center;
+}
+
+.has-header {
+	background: #D3D3D3
+}
+.bar.bar-stable {
+	background-color: #F15D22;
+}
+.button.button-positive {
+	background: #807F83;
+	border-color: #807F83
+}
+.addedProject th, .addedProject td {
+	text-align: left;
+	padding-left: 20px;
+	vertical-align: top;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.addedProject th {
+	font-size: 12px;
+	font-weight: bold
+}
+.addedProject {
+	background: #EBEBEB;
+	margin-top: 20px
+}
+.button-large {
+	line-height: 30px;
+	min-height: 16px;
+}
+.addfineinfo .findinfo cite {
+	border: 1px solid #e3e3e3;
+	padding: 5px;
+}
+.addfineinfo label {
+	padding-left: 0px
+}
+.appFront {
+	margin: 0 auto;
+	width: 95%;
+	background: #fff;
+	/*opacity: 0.5;*/
+	border: 1px solid #E3E3F7;
+	box-shadow: 2px 1px 5px #888888;
+	margin-top: 20px;
+	padding: 20px;
+}
+.fine-reason .displayBlock {
+	display: block
+}
+#reasons {
+	  width: 33%;
+  height: 30px;
+}
+
+.appFront li {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+.appFront strong {
+	color: #F15D22
+}
+.item-complex .item-content, .item-radio .item-content {
+	padding: 5px 16px
+}
+.text-alignC {
+	text-align: center
+}
+.addedProject button {
+	margin-left: 15px;
+}
+.item-stacked-label .input-label, .item-stacked-label .icon {
+	font-weight: bold;
+	font-size: 13px
+}
+.footerSection.title {font-size:12px;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family:arial;}
+
+
+.addfineinfo label {font-weight:bold; border:none; padding-top:0}
+
+.addfineinfo input{  border: 1px solid #EDEDED;
+  margin: 5px 0px;
+  padding-left: 5px;}
+  .triggerClass {text-align:center}
+  .triggerClass a {width:32%;}
+  .alldevList label {width:100%; display:block}
+  .horizontalForm label {float:left; width:auto;}
+  .horizontalForm input {}
+  .horizontalForm.fineinfo input {float:left;border: 1px solid #EDEDED;
+  padding-left: 5px; height:30px; width:10%}
+  .alldevList label strong {margin-right:10px}
+  .horizontalForm {margin:10px 0}
+  .item-body.alldevList {background:#F0F0F0}
+  
+.button.button-dark {
+ padding: 0 4px;
+}
+.horizontalForm #reasons {width:80%}

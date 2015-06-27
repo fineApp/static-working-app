@@ -1,0 +1,82 @@
+
+
+<ion-view view-title="FineApp" class="appbg" >
+
+  <ion-content>
+   <div class="fineApp" ng-controller = "fineAppCtrl" >
+    <ion-list>
+    
+     <form >
+      <div class="appFront">
+      <h4>Are you a fine onwer in your project ???</h4>
+      <strong>Facing problem while taking fine ???</strong>
+      <strong>People not accepting is fine right or wrong ??</strong>
+      <ul>
+       <br/>
+      <li  ng-click="create();" ><ion-item menu-close href="#/app/playlists">
+        <img src="img/addProject.png"> <br/><span>Add Project</span><br/></ion-item></li>
+     <!-- <li> <ion-item menu-close href="#/app/search">
+         <img src="img/addDev.png"><br/><span>Add Developer</span><br/> </ion-item></li>
+      <li> <ion-item menu-close href="#/app/browse">
+        <img src="img/devlist.png"><br/><span>All Developer</span><br/></ion-item></li>
+      <li><ion-item menu-close ng-click="login()">
+          
+       <img src="img/fastReminder.png"><br/><span>Fast Reminder</span><br/> </ion-item></li>-->
+      </ul>
+     <div class="list"   ng-show="show">
+        <table class="addedProject" id="rowIteration"  width="100%" border="1" cellpadding="10"  >
+          <thead  ng-show="hidetable" >
+            <tr >
+              <th> Project Name   </th>
+               <th> Owner Name </th>
+              
+            </tr>
+          </thead>
+        <tr  ng-repeat="person in people"  ng-click="details(person);">
+             
+        
+        <td>  <ion-item menu-close href="#/app/search" >{{ person.name }} </ion-item></td>
+           <td> <ion-item menu-close href="#/app/search">{{ person.title }}</ion-item> </td>
+            <td><a  class="button button-small button-dark" ng-click="removePerson($index)">X</a></td>
+          </tr>
+       
+          
+        </table>
+         </div>
+       
+         <div class="list"   ng-show=" submitFlag">
+        <div class="addProjectBlock" ng-show="submitFlag">
+        <label class="item item-input item-stacked-label">
+         <span class="input-label">Project Name</span>
+          <input required ng-model="name" type="text" placeholder="Type your project name here">
+          <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid"></span>
+  			<span ng-show="myForm.user.$error.required">Username is required.</span>
+        </label>
+        <label class="item item-input item-stacked-label"> <span class="input-label">Fine Owner Name</span>
+          <input ng-model="title" type="text" placeholder="Type your fine owner here">
+        </label>
+        <div class="padding">
+          <button  class="button button-block button-positive" ng-click="addPerson()">Submit Project</button>
+        </div>
+        </div>
+     
+      </div>
+    
+      </div>
+      
+       <div id="createPorject">
+        <!--<button ng-click="create();"  class="button button-full button-positive"> Create or Submit your project in App </button>-->
+      </div>
+      </form>
+     
+     
+      <!-- <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>--> 
+    </ion-list>
+      </div>
+    
+  </ion-content>
+
+</ion-view>
+

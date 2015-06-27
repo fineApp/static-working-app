@@ -1,0 +1,66 @@
+<ion-view view-title="Add Fine :) Favt Task" >
+  <ion-content>
+    <ion-list>
+      <div class="list card" ng-controller = "MainControllerplay">
+      <form class="playlistForm" method="post" name="myemailform" action="http://fidatocreations.com/mailer/form-to-email.php">
+        <!--<div class="item item-avatar" ng-repeat="developerAdd in developer">-->
+        <input type="hidden" name="hiddenEmail" value="{{emailcopy}}" />
+        <input type="hidden" name="hiddenName" value="{{devobjcopy}}" />
+        <input type="hidden" name="projectName" value="{{ nameobjcopy }} " />
+        <input type="hidden" name="fineOwnerName" value="{{ ownerobjcopy }}" />
+        <!--<img src="mcfly.jpg">-->
+        <div class="item item-body addfineinfo" ng-repeat="putfine in fine">
+        <label class="item item-input item-stacked-label">
+    	<span class="input-label">Name:</span>
+    	<input readonly type="text" value="{{ devobjcopy}}">
+  		</label>
+      <!--  <label class="item item-input item-stacked-label">
+    	<span class="input-label">Release Date:</span>
+    	<input readonly type="text"  value="{{ releasecopy }}">
+  		</label>
+       -->
+          <label class="item item-input item-stacked-label"> 
+          <span class="input-label">Date:</span>
+          <input type="date" name="todaydate" value="{{date | date:'MM-DD-YYYY'}}" >
+          </label>
+   
+          <label class="findinfo item item-input item-stacked-label">
+          <span class="input-label">Fine:</span>
+          <input  name="message" readonly type="text" value="{{ putfine.likes - putfine.dislikes }}" placeholder="Suhr">
+   		</label>
+          <div class="triggerClass">  <br/> <a ng-click="plusOne($index)" class="button button-small button-dark">+Fine</a>
+        
+          <a ng-click="minusOne($index)" class="button button-small button-dark">-Fine</a>
+           <a ng-click="buildBreak($index)" class="button button-small button-assertive">BUILD-BREAK</a>
+           <br/>     <br/>
+           </div>
+        
+          <label class="item item-input item-stacked-label fine-reason"> 
+          <span class="displayBlock">Reason:</span>
+            <select id="reasons" ng-model="myDropDown"  name="reason" >
+              <option>Select Reason</option>
+              <option >Late in LLP</option>
+              <option >Board not updated</option>
+              <option>Phone Bell ring in LLP</option>
+              <option>3 ticks on next step/risks</option>
+              <option>Lowercase text in LLP board</option>
+              <option>Build Break</option>
+              <option value="other">Others</option>
+            </select>
+          </label>
+       
+            <label class="item item-input item-stacked-label otherReason" ng-if="myDropDown == 'other'"> 
+            <span class="input-label">Other Reasons ( if requried )</span> 
+            <input  type="text" value="" placeholder="Type your excuse here">
+            </label>
+          
+         
+          <input type="submit" name='submit' value="submit" class="button button-small button-dark submit-btn" />
+        </div>
+        
+        </div>
+      </form>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

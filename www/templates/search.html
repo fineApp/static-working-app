@@ -1,0 +1,62 @@
+<ion-view view-title="Add Developer">
+  <ion-content>
+   <div class="list card" ng-controller = "addAppCtrl" >
+    
+     
+<table class="addedProject"  ng-show="show" width="100%" border="1" cellpadding="10"  >
+          <thead>
+            <tr>
+              <th> Dev Name</th>
+               <!--<th>Release Date</th>-->
+              <th>Delete </th>
+            </tr>
+          </thead>
+        <tr ng-repeat="developerAdd in developer" ng-click="addDev(developerAdd);">
+          <td >  <ion-item menu-close href="#/app/playlist" >{{ developerAdd.devname }}</ion-item> </td>
+           <!--<td><ion-item menu-close href="#/app/playlist" >{{ developerAdd.releasedate }}</ion-item></td>-->
+            <!--<td><ion-item menu-close href="#/app/playlist" >{{ developerAdd.emailid }}</ion-item></td>-->
+            <!-- <td><ion-item menu-close href="#/app/playlist" >{{ developerAdd.phonenumber }}</ion-item></td>-->
+            <td><a  class="button button-small button-dark" ng-click="removeDev($index)">X</a></td>
+          </tr>
+       
+          
+        </table>
+  <div class="item item-avatar">
+  
+    <img src="img/sapient.png">
+    <h2>Projects: {{nameobjcopy}}</h2>
+    <p>Fine Owner :{{ownerobjcopy}}</p>
+  </div>
+
+  <div class="item item-body">
+      <div class="list">
+        <div class="addProjectBlock">
+        <label class="item item-input item-stacked-label"> <span class="input-label">Developer Name</span>
+          <input ng-model="devname"  type="text" placeholder="Developer Name">
+        </label>
+        <label class="item item-input item-stacked-label"> <span class="input-label">Release Date</span>
+          <input ng-model="releasedate"  type="date" placeholder="Release Date">
+        </label>
+         <label class="item item-input item-stacked-label"> <span class="input-label">Email ID</span>
+          <input ng-model="emailid"  type="email" placeholder="Email ID">
+        </label>
+          <label class="item item-input item-stacked-label"> <span class="input-label">Phone Number</span>
+          <input ng-model="phonenumber"  type="number" placeholder="Phone Number">
+        </label>
+           <label class="item item-input item-stacked-label"> <span class="input-label">Upload Photo</span>
+           <br/>
+          <input ng-model="phonenumber"  type="file" placeholder="Photo">
+        </label>
+        <div class="padding">
+          <button  class="button button-block button-positive"  ng-click="addDeveloper()">Add Developer</button>
+        </div> 
+        </div>
+     
+      </div>
+</div>
+     
+      
+      </div>
+  </ion-content>
+</ion-view>
+
